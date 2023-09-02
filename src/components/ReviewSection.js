@@ -3,7 +3,7 @@ import React from 'react';
 
  function ReviewSection(){
     return(
-        <div className='p-16 max-md:px-2 max-lg:py-8  overflow-y-auto  bg-[#00113b] overflow-hidden '>
+        <div className='p-16 max-md:px-2 max-lg:py-12 lg:mt-[10%]  overflow-y-auto  bg-[#00113b] overflow-hidden '>
              <h3 className="text-6xl text-white max-md:text-2xl overflow-hidden font-bold  text-center">
                     Julieth AI's Quality Review Process
                 </h3>

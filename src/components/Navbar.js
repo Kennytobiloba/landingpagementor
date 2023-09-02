@@ -80,7 +80,7 @@ function Navbar() {
         </ul>
 
        <div className='hidden lg:flex'>
-       <button className="  text-white text-[20px] bg-[#FC00B5] font-700 md:flex py-3 w-[#3rem] px-7 rounded-l-3xl font-extrabold mt-8">
+       <button className=" git clone <repository_url> text-white text-[20px] bg-[#FC00B5] font-700 md:flex py-3 w-[#3rem] px-7 rounded-l-3xl font-extrabold mt-8">
           Login
         </button>
        </div>
