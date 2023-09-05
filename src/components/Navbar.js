@@ -10,7 +10,7 @@ function Navbar() {
   };
 
   return (
-    <nav className=" z-50 w-full flex items-center justify-center py-4 flex-col">
+    <nav className=" z-50 w-full flex items-center justify-center py-4 flex-col relative">
       <div className="w-[90%] flex justify-between items-center h-max md:w-[87%]">
         <div>
           <img src="./image/julieth2.jpg" alt="" width={80} />
