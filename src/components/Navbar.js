@@ -26,11 +26,11 @@ function Navbar() {
         </div>
 
         <ul
-          className={`navbar space-x-4 lg:hidden absolute top-[100%] left-0 right-0 w-[100%] bg-[#FC00B5] h-[40vh] text-left ${
-            isMobileMenuOpen ? 'block' : 'hidden'
+          className={`navbar space-x-4 lg:hidden transition ease-in-out delay-150 absolute top-[100%] left-0 right-0 w-[100%] bg-[#FC00B5] h-[40vh] text-left ${
+            isMobileMenuOpen ? 'block  h-[190px]   ' : 'hidden h-[0px] p-0 py-0'
           }`}
         >
-          <div className="mt-16 ml-16">
+          <div className="mt-6 ml-16">
             <li className="mb-2">
               <a href="#" className="text-white hover:text-[#ffa2e5] lg:hidden text-[18px] mb-12 font-semibold">
                 Home
