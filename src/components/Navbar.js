@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -80,9 +81,13 @@ function Navbar() {
         </ul>
 
        <div className='hidden lg:flex'>
+       <Link to="/login">
        <button className=" git clone <repository_url> text-white text-[20px] bg-[#FC00B5] font-700 md:flex py-3 w-[#3rem] px-7 rounded-l-3xl font-extrabold mt-8">
-          Login
+         
+       <Link to="/login">Login</Link>
+        
         </button>
+        </Link>
        </div>
       </div>
     </nav>
