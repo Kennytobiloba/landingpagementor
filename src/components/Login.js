@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiUserCircle } from "react-icons/bi"
 import { BsEye, BsEyeSlash, BsLock } from "react-icons/bs"
+import { Link } from 'react-router-dom';
  const Login = () => {
   return (
     
@@ -76,16 +77,25 @@ import { BsEye, BsEyeSlash, BsLock } from "react-icons/bs"
             </div>
 
             <h3 className='text-[#FC00B5] text-sm font-[300]'>
-                 Forgot Password?
+               <Link to="signUp">  Forgot Password?</Link>
             </h3>
+            
 
           </div>
+         <button className='bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center'>
+         
+              
+               <Link to="/signUp">Login</Link>
            
-          <button className="bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center">Login</button>
-            <p className='text-sm mt-4 text-white/40'>
-            Opps! aren’t part of the community yet?{" "}
-            <a href="#" className='text-[#FC00B5] opacity-100 underline-offset-1'>SignUp</a>
-            </p>
+         </button>
+
+          <p className='text-sm mt-4 text-white/40'>
+  Opps! aren’t part of the community yet?{" "}
+  <Link to="/signUp" className='text-[#FC00B5] opacity-100 underline-offset-1'>Sign Up</Link>
+</p>
+
+  
+          
             
           
 
