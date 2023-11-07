@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
     <div className='w-[100%] lg:w-[40%] bg-[#130F26] p-8 lg:p-10'>
       <form action="" className='h-[90%] w-full flex flex-col items-center justify-center'>
         <h3 className='font-[500] text-transparent text-[40px] bg-clip-text bg-gradient-to-r from-[#B658FF] to-[#FC00B5] tracking-[2px] mb-10'>
-          Login
+          <Link to="signUp"> Login</Link>
         </h3>
           <div className='w-full md:w-[80%] py-3'>
             <label htmlFor="email" className='text-md opacity-80 text-white'>Email</label>
@@ -82,12 +82,12 @@ import { Link } from 'react-router-dom';
             
 
           </div>
-         <button className='bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center'>
-         
-              
-               <Link to="/signUp">Login</Link>
+       <Link to="/signUp" className='bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center'>
            
-         </button>
+               Login
+           
+         
+         </Link>
 
           <p className='text-sm mt-4 text-white/40'>
   Opps! aren’t part of the community yet?{" "}

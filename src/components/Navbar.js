@@ -48,9 +48,11 @@ function Navbar() {
               </a>
             </li>
             <li className="mb-2">
+              <Link to="/login">
               <a href="#" className="text-white hover:text-[#ffa2e5] lg:hidden text-[18px] mb-12 font-semibold">
                 Login
               </a>
+              </Link>
             </li>
           </div>
         </ul>
@@ -74,19 +76,22 @@ function Navbar() {
             </a>
           </li>
           <li>
+            <Link to="/login">
             <a href="#" className="text-white hover:text-[#ffa2e5] lg:hidden text-[18px]">
-              Login
+              Login  
             </a>
+            </Link>
           </li>
         </ul>
 
        <div className='hidden lg:flex'>
-       
+       <Link to="/login">
        <button className=" git clone <repository_url> text-white text-[20px] bg-[#FC00B5] font-700 md:flex py-3 w-[#3rem] px-7 rounded-l-3xl font-extrabold mt-8">
          
-       <Link to="/login">Login</Link>
+       Login
         
         </button>
+        </Link>
     
        </div>
       </div>
