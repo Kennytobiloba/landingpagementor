@@ -1,39 +1,30 @@
-import React, { useState } from 'react';
-import { BiUserCircle } from 'react-icons/bi';
-import { BsLock } from 'react-icons/bs';
+import React, { useState } from 'react'
+import { BiUserCircle } from "react-icons/bi"
+import { BsEye, BsEyeSlash, BsLock } from "react-icons/bs"
 import { Link } from 'react-router-dom';
-import { BeatLoader } from 'react-spinners';
-
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [fetchSuccess, setFetchSuccess] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const handleSubmit = async (event) => {
+ const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+  const handleSubmit = async(event) => {
     event.preventDefault();
-    setLoading(true);
-    try {
-      const response = await fetch('https://julieth-dev-server.herokuapp.com/api/v1/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    const endPoint = "https://julieth-dev-server.herokuapp.com/api/v1/auth/login"
+
+     try{
+      const response = await fetch(endPoint,{
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password })
       });
+      const data = await response.JSON()
+      console.log(data)
 
-      const data = await response.json();
 
-      if (data?.data?.token) {
-        localStorage.setItem('token', data.data.token);
-        setFetchSuccess(true);
-      }
-    } catch (error) {
-      setError('Error logging in. Please try again.');
-    }
-    setLoading(false);
-  };
+     }catch(error){
+      console.error('Error:', error);
+     }
+  }
   return (
     
   <section className='"w-full flex bg-[#262626] bg-gradient-to-r from-[#5C0095]/60 to-[#262626] h-screen'>
@@ -108,34 +99,31 @@ const Login = () => {
             </div>
 
             <h3 className='text-[#FC00B5] text-sm font-[300]'>
-               <h3>  Forgot Password?</h3>
+               <Link to="signUp">  Forgot Password?</Link>
             </h3>
             
 
           </div>
-          {fetchSuccess ? (
-            <Link to="/signUp" className="bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center">
-              Go to Dashboard
-            </Link>
-          ) : (
-            <button type="submit" className="bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center">
-              {loading ? <BeatLoader style={{ padding: "2px" }} color="#ffffff" size={10} /> : "Login"}
-            </button>
-          )}
-          {error && <p>{error}</p>}
+       <button className='bg-gradient-to-r w-full md:w-[80%] mt-12 from-[#B658FF] to-[#FC00B5] text-white p-4 shadow-lg rounded-md disabled:opacity-50 flex items-center justify-center'>
+           
+               Login
+           
+         
+         </button>
+
+          <p className='text-sm mt-4 text-white/40'>
+  Opps! aren’t part of the community yet?{" "}
+  <Link to="/signUp" className='text-[#FC00B5] opacity-100 underline-offset-1'>Sign Up</Link>
+</p>
+
   
-           {/* ... Your form content ... */}
-      
-      
-           <p className="text-sm mt-4 text-white/40">
-                        Opps! aren’t part of the community yet?{" "}
-                        <Link
-                            className="text-[#FC00B5] opacity-100 underline-offset-1"
-                            to={"/auth/register"}
-                        >
-                            Signup
-                        </Link>
-                    </p>
+          
+            
+          
+
+
+     
+
       </form>
 
     </div>
